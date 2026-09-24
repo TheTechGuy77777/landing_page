@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ChibuzoConnect Technologies — Websites that work</title>
+    <meta
+      name="description"
+      content="Laravel web development for small businesses — websites, booking systems, and event platforms built by ChibuzoConnect Technologies."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              ink: "#12151B",
+              surface: "#191D26",
+              rule: "#2A2F3B",
+              amber: "#E8A33D",
+              text: "#E9EAEC",
+              muted: "#9AA1AC",
+            },
+            fontFamily: {
+              serif: ["Fraunces", "serif"],
+              sans: ["IBM Plex Sans", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: #12151b;
+      }
+      .rule-line {
+        border-color: #2a2f3b;
+      }
+    </style>
+  </head>
+  <body class="bg-ink text-text font-sans antialiased">
+    <!-- Nav -->
+    <header
+      class="max-w-5xl mx-auto px-6 pt-10 flex items-center justify-between"
+    >
+      <span class="font-serif text-lg tracking-tight"
+        >ChibuzoConnect <span class="text-muted">Technologies</span></span
+      >
+      <nav class="hidden sm:flex gap-8 text-sm text-muted">
+        <a href="#work" class="hover:text-text transition-colors">Work</a>
+        <a href="#services" class="hover:text-text transition-colors"
+          >Services</a
+        >
+        <a href="#contact" class="hover:text-text transition-colors">Contact</a>
+      </nav>
+    </header>
+
+    <!-- Hero -->
+    <section
+      class="max-w-5xl mx-auto px-6 pt-20 pb-24 grid sm:grid-cols-5 gap-10 items-end"
+    >
+      <div class="sm:col-span-3">
+        <h1 class="font-serif text-4xl sm:text-5xl leading-[1.1]">
+          I build websites that do the work of a full team, for the price of a
+          good invoice.
+        </h1>
+      </div>
+      <div
+        class="sm:col-span-2 border-t rule-line pt-4 sm:border-t-0 sm:border-l sm:pl-8"
+      >
+        <p class="text-muted text-[15px] leading-relaxed">
+          Laravel-built websites and booking systems for small businesses — from
+          first sketch to a site that takes real bookings and payments.
+        </p>
+        <a
+          href="#contact"
+          class="inline-block mt-6 text-amber text-sm border-b border-amber/40 pb-0.5 hover:border-amber transition-colors"
+        >
+          Start a project
+        </a>
+      </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="max-w-5xl mx-auto px-6 py-20 border-t rule-line">
+      <h2 class="font-serif text-2xl mb-12">Recent work</h2>
+
+      <div class="space-y-14">
+        <!-- Project 1 -->
+        <div class="grid sm:grid-cols-5 gap-6 border-t rule-line pt-8">
+          <div class="sm:col-span-2">
+            <h3 class="font-serif text-xl">ChibuzoConnect</h3>
+            <p class="text-muted text-sm mt-1">
+              Event platform · Laravel, Paystack, Alpine.js
+            </p>
+          </div>
+          <div class="sm:col-span-3">
+            <p class="text-[15px] leading-relaxed text-text/90">
+              A full event ticketing and management platform: organiser tools, a
+              three-step event wizard, QR check-in at the door, and guest
+              checkout with card payments through Paystack.
+            </p>
+            <a
+              href="https://chibuzoconnect.com"
+              target="_blank"
+              rel="noopener"
+              class="inline-block mt-3 text-sm text-amber hover:underline"
+            >
+              chibuzoconnect.com ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 2 -->
+        <div class="grid sm:grid-cols-5 gap-6 border-t rule-line pt-8">
+          <div class="sm:col-span-2">
+            <h3 class="font-serif text-xl">Benchaste Construction</h3>
+            <p class="text-muted text-sm mt-1">
+              Client site · Laravel, Filament, Tailwind
+            </p>
+          </div>
+          <div class="sm:col-span-3">
+            <p class="text-[15px] leading-relaxed text-text/90">
+              A landscaping and construction company's website and blog, built
+              and deployed for a live client — content management, a working
+              blog with SEO-friendly routing, and a site that holds up on
+              mobile.
+            </p>
+            <a
+              href="https://benchasteconstruction.com"
+              target="_blank"
+              rel="noopener"
+              class="inline-block mt-3 text-sm text-amber hover:underline"
+            >
+              benchasteconstruction.com ↗
+            </a>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="grid sm:grid-cols-5 gap-6 border-t rule-line pt-8">
+          <div class="sm:col-span-2">
+            <h3 class="font-serif text-xl">Fitness booking demo</h3>
+            <p class="text-muted text-sm mt-1">
+              Concept build · appointment booking
+            </p>
+          </div>
+          <div class="sm:col-span-3">
+            <p class="text-[15px] leading-relaxed text-text/90">
+              A concept site built to show what a personal trainer or small
+              studio gets in the standard package: online booking, automatic
+              confirmations, and a site that looks like it belongs to an
+              established gym.
+            </p>
+            <span class="inline-block mt-3 text-sm text-muted"
+              >Demo — not a live client site</span
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section
+      id="services"
+      class="max-w-5xl mx-auto px-6 py-20 border-t rule-line"
+    >
+      <h2 class="font-serif text-2xl mb-12">What I build</h2>
+      <div class="grid sm:grid-cols-2 gap-x-10 gap-y-10">
+        <div>
+          <h3 class="font-medium">Business websites</h3>
+          <p class="text-muted text-sm mt-2 leading-relaxed">
+            A site that explains what you do and makes it easy to get in touch
+            or book — built to last, not just launched.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-medium">Booking &amp; payments</h3>
+          <p class="text-muted text-sm mt-2 leading-relaxed">
+            Appointment booking, confirmations, and card payments wired in, so
+            the site does the admin work for you.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-medium">Laravel web apps</h3>
+          <p class="text-muted text-sm mt-2 leading-relaxed">
+            Custom platforms beyond a brochure site — user accounts, dashboards,
+            and the logic your business actually runs on.
+          </p>
+        </div>
+        <div>
+          <h3 class="font-medium">Care &amp; maintenance</h3>
+          <p class="text-muted text-sm mt-2 leading-relaxed">
+            Bug fixes, updates, and small changes after launch, so the site
+            keeps working as your business grows.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trust -->
+    <section class="max-w-5xl mx-auto px-6 py-16 border-t rule-line">
+      <div class="flex flex-wrap gap-x-10 gap-y-3 text-sm text-muted">
+        <span>Registered with the Corporate Affairs Commission, Nigeria</span>
+        <span>Full Stack Web Development (PHP/Laravel) certified</span>
+        <a
+          href="https://github.com/TheTechGuy77777"
+          target="_blank"
+          rel="noopener"
+          class="hover:text-text transition-colors"
+          >GitHub ↗</a
+        >
+        <a
+          href="https://linkedin.com/in/chibuzo-ogbogu/"
+          target="_blank"
+          rel="noopener"
+          class="hover:text-text transition-colors"
+          >LinkedIn ↗</a
+        >
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section
+      id="contact"
+      class="max-w-5xl mx-auto px-6 py-24 border-t rule-line"
+    >
+      <h2 class="font-serif text-3xl max-w-xl leading-tight">
+        Have a project in mind? Tell me what you're building.
+      </h2>
+      <a
+        href="mailto:hello@chibuzoconnect.com"
+        class="inline-block mt-8 text-amber text-sm border-b border-amber/40 pb-0.5 hover:border-amber transition-colors"
+      >
+        info@chibuzoconnect.com
+      </a>
+    </section>
+
+    <footer class="max-w-5xl mx-auto px-6 pb-10 text-xs text-muted">
+      © 2026 ChibuzoConnect Technologies
+    </footer>
+  </body>
+</html>
