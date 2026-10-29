@@ -347,6 +347,190 @@
     </section>
 
     <!--
+  REVIEWS SECTION:
+
+  HOW TO ADD A REVIEW LATER:
+  Copy one whole <article class="rv-card"> ... </article> block, paste it right after the last one
+  inside <div class="rv-grid">, and change the text. The layout adjusts by itself:
+  1 card stays a neat single card, 2 sit side by side, 3 or more fill the row and wrap on small screens.
+-->
+
+    <style>
+      #reviews {
+        --rv-ink: #14213d;
+        --rv-muted: #5b6477;
+        --rv-line: #dfe3ea;
+        --rv-surface: #ffffff;
+        --rv-accent: #0b6e4f;
+        padding: 72px 20px 24px;
+        font-family: inherit;
+        box-sizing: border-box;
+        scroll-margin-top: 90px;
+      }
+      #reviews *,
+      #reviews *::before,
+      #reviews *::after {
+        box-sizing: border-box;
+      }
+      .rv-wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .rv-head {
+        max-width: 620px;
+        margin: 0 0 32px;
+      }
+      .rv-head h2 {
+        font-size: clamp(1.6rem, 4vw, 2.2rem);
+        line-height: 1.15;
+        margin: 0 0 10px;
+        font-weight: 800;
+        color: var(--rv-ink);
+      }
+      .rv-head p {
+        margin: 0;
+        color: var(--rv-muted);
+        font-size: 1.02rem;
+        line-height: 1.6;
+      }
+
+      /* 1 card stays a sensible width; more cards fill the row and wrap */
+      .rv-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 400px));
+        gap: 20px;
+        justify-content: start;
+        align-items: stretch;
+      }
+      .rv-card {
+        background: var(--rv-surface);
+        border: 1px solid var(--rv-line);
+        border-radius: 14px;
+        padding: 26px 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin: 0;
+        color: var(--rv-ink);
+      }
+      .rv-quote {
+        margin: 0;
+        font-size: 1.04rem;
+        line-height: 1.65;
+        flex: 1;
+      }
+      .rv-quote p {
+        margin: 0 0 10px;
+      }
+      .rv-quote p:last-child {
+        margin-bottom: 0;
+      }
+      .rv-person {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .rv-avatar {
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        flex: none;
+        background: var(--rv-accent);
+        color: #fff;
+        font-weight: 700;
+        font-size: 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+      .rv-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+      .rv-name {
+        margin: 0;
+        font-weight: 700;
+        font-size: 1rem;
+        line-height: 1.3;
+      }
+      .rv-role {
+        margin: 2px 0 0;
+        color: var(--rv-muted);
+        font-size: 0.9rem;
+        line-height: 1.4;
+      }
+      .rv-role a {
+        color: var(--rv-accent);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      .rv-role a:focus-visible {
+        outline: 3px solid #f5a524;
+        outline-offset: 2px;
+        border-radius: 3px;
+      }
+
+      @media (max-width: 640px) {
+        #reviews {
+          padding: 56px 16px 16px;
+        }
+        .rv-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+
+    <section id="reviews" aria-labelledby="rv-title">
+      <div class="rv-wrap">
+        <div class="rv-head">
+          <h2 id="rv-title">What clients say</h2>
+          <p>Feedback from businesses I've built websites for.</p>
+        </div>
+
+        <div class="rv-grid">
+          <!-- Review 1 -->
+          <article class="rv-card">
+            <blockquote class="rv-quote">
+              <p>
+                “Working with ChibuzoConnect Technologies was a great
+                experience. They delivered a professional website for Benchaste
+                Construction that showcases our services and strengthens our
+                online presence.
+              </p>
+              <p>
+                Communication was smooth, and the project was handled with
+                professionalism and attention to detail. I would recommend their
+                services to any business looking for reliable website design and
+                development.”
+              </p>
+            </blockquote>
+            <div class="rv-person">
+              <!-- Initials circle. To use a photo instead, replace the initials with: <img src="chidiebere.jpg" alt="Chidiebere Nwafor"> -->
+              <div class="rv-avatar" aria-hidden="true">CN</div>
+              <div>
+                <p class="rv-name">Chidiebere Nwafor</p>
+                <p class="rv-role">
+                  Owner,
+                  <a
+                    href="https://benchasteconstruction.com"
+                    target="_blank"
+                    rel="noopener"
+                    >Benchaste Construction</a
+                  >
+                </p>
+              </div>
+            </div>
+          </article>
+
+          <!-- To add another review, copy the whole <article> block above and paste it here. -->
+        </div>
+      </div>
+    </section>
+
+    <!--
   PRICING SECTION:
 -->
 
