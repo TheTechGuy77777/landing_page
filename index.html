@@ -18,7 +18,6 @@
     />
 
     <link rel="canonical" href="https://tech.chibuzoconnect.com/" />
-    />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -332,6 +331,555 @@
         </a>
       </div>
     </section>
+
+    <!--
+  PRICING SECTION: paste this whole block into index.html where you want pricing to appear
+  (usually after your projects section, before the footer).
+  It is self-contained: its own CSS (prefixed pz-), markup and a small script. No Tailwind needed.
+  Change the colours in the :root block below to match your page.
+-->
+
+    <style>
+      #pricing {
+        --pz-ink: #14213d;
+        --pz-muted: #5b6477;
+        --pz-line: #dfe3ea;
+        --pz-surface: #ffffff;
+        --pz-bg: #f6f7fa;
+        --pz-accent: #0b6e4f;
+        --pz-accent-ink: #ffffff;
+        background: var(--pz-bg);
+        color: var(--pz-ink);
+        padding: 72px 20px;
+        font-family: inherit;
+        box-sizing: border-box;
+      }
+      #pricing *,
+      .pz-modal * {
+        box-sizing: border-box;
+      }
+      .pz-wrap {
+        max-width: 1080px;
+        margin: 0 auto;
+      }
+      .pz-head {
+        max-width: 620px;
+        margin: 0 0 40px;
+      }
+      .pz-head h2 {
+        font-size: clamp(1.7rem, 4vw, 2.4rem);
+        line-height: 1.15;
+        margin: 0 0 12px;
+        font-weight: 800;
+      }
+      .pz-head p {
+        margin: 0;
+        color: var(--pz-muted);
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      .pz-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        align-items: stretch;
+      }
+      .pz-card {
+        background: var(--pz-surface);
+        border: 1px solid var(--pz-line);
+        border-radius: 14px;
+        padding: 28px 24px;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+      .pz-card.pz-featured {
+        border: 2px solid var(--pz-accent);
+        box-shadow: 0 10px 30px rgba(11, 110, 79, 0.12);
+      }
+      .pz-tag {
+        position: absolute;
+        top: -13px;
+        left: 24px;
+        background: var(--pz-accent);
+        color: var(--pz-accent-ink);
+        font-size: 0.8rem;
+        font-weight: 700;
+        padding: 4px 12px;
+        border-radius: 999px;
+      }
+      .pz-card h3 {
+        margin: 0 0 4px;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+      .pz-scope {
+        margin: 0 0 18px;
+        color: var(--pz-muted);
+        font-size: 0.95rem;
+      }
+      .pz-price {
+        font-size: 2.2rem;
+        font-weight: 800;
+        margin: 0;
+        letter-spacing: -0.02em;
+      }
+      .pz-delivery {
+        margin: 4px 0 20px;
+        color: var(--pz-muted);
+        font-size: 0.92rem;
+      }
+      .pz-list {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 24px;
+        display: grid;
+        gap: 10px;
+        flex: 1;
+      }
+      .pz-list li {
+        position: relative;
+        padding-left: 26px;
+        font-size: 0.96rem;
+        line-height: 1.45;
+      }
+      .pz-list li::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 5px;
+        width: 6px;
+        height: 11px;
+        border: solid var(--pz-accent);
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+      .pz-actions {
+        display: grid;
+        gap: 10px;
+      }
+      .pz-btn {
+        display: block;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        padding: 13px 16px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 0.98rem;
+        border: 2px solid var(--pz-accent);
+        background: var(--pz-accent);
+        color: var(--pz-accent-ink);
+        font-family: inherit;
+      }
+      .pz-btn:hover {
+        filter: brightness(1.08);
+      }
+      .pz-btn.pz-ghost {
+        background: transparent;
+        color: var(--pz-accent);
+      }
+      .pz-btn.pz-ghost:hover {
+        background: rgba(11, 110, 79, 0.06);
+        filter: none;
+      }
+      .pz-btn:focus-visible,
+      .pz-close:focus-visible {
+        outline: 3px solid #f5a524;
+        outline-offset: 2px;
+      }
+
+      .pz-custom {
+        margin-top: 24px;
+        background: var(--pz-ink);
+        color: #fff;
+        border-radius: 14px;
+        padding: 28px 28px;
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+      .pz-custom h3 {
+        margin: 0 0 6px;
+        font-size: 1.2rem;
+      }
+      .pz-custom p {
+        margin: 0;
+        color: #c9d0de;
+        max-width: 560px;
+        line-height: 1.55;
+        font-size: 0.98rem;
+      }
+      .pz-custom .pz-btn {
+        background: #fff;
+        color: var(--pz-ink);
+        border-color: #fff;
+        white-space: nowrap;
+      }
+
+      .pz-notes {
+        margin: 24px 0 0;
+        padding: 0;
+        list-style: none;
+        display: grid;
+        gap: 6px;
+        color: var(--pz-muted);
+        font-size: 0.92rem;
+        line-height: 1.5;
+      }
+      .pz-notes strong {
+        color: var(--pz-ink);
+      }
+
+      /* modal */
+      .pz-modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(10, 16, 30, 0.6);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        z-index: 9999;
+      }
+      .pz-modal.pz-open {
+        display: flex;
+      }
+      .pz-dialog {
+        background: #fff;
+        color: #14213d;
+        width: 100%;
+        max-width: 520px;
+        max-height: 88vh;
+        overflow-y: auto;
+        border-radius: 16px;
+        padding: 28px 26px;
+        position: relative;
+        font-family: inherit;
+      }
+      .pz-dialog h3 {
+        margin: 0 0 4px;
+        font-size: 1.3rem;
+      }
+      .pz-dialog .pz-m-price {
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin: 0 0 4px;
+      }
+      .pz-dialog .pz-m-meta {
+        color: #5b6477;
+        margin: 0 0 18px;
+        font-size: 0.95rem;
+      }
+      .pz-dialog ul {
+        margin: 0 0 18px;
+        padding-left: 20px;
+        display: grid;
+        gap: 8px;
+        line-height: 1.5;
+      }
+      .pz-dialog .pz-m-note {
+        background: #f6f7fa;
+        border-radius: 10px;
+        padding: 12px 14px;
+        font-size: 0.9rem;
+        color: #5b6477;
+        margin: 0 0 20px;
+        line-height: 1.5;
+      }
+      .pz-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: 0;
+        background: #eef0f5;
+        cursor: pointer;
+        font-size: 1.2rem;
+        line-height: 1;
+        color: #14213d;
+      }
+
+      @media (max-width: 860px) {
+        .pz-grid {
+          grid-template-columns: 1fr;
+        }
+        .pz-card.pz-featured {
+          order: -1;
+        }
+        #pricing {
+          padding: 56px 16px;
+        }
+      }
+    </style>
+
+    <section id="pricing" aria-labelledby="pz-title">
+      <div class="pz-wrap">
+        <div class="pz-head">
+          <h2 id="pz-title">
+            Simple, upfront pricing for your business website
+          </h2>
+          <p>
+            Pick the size that fits your business. Not sure which one? Message
+            me on WhatsApp and I'll point you to the right option.
+          </p>
+        </div>
+
+        <div class="pz-grid">
+          <!-- Basic -->
+          <article class="pz-card">
+            <h3>Basic landing page</h3>
+            <p class="pz-scope">1 page</p>
+            <p class="pz-price">₦50,000</p>
+            <p class="pz-delivery">Typical delivery: 2–3 days</p>
+            <ul class="pz-list">
+              <li>Single-page website</li>
+              <li>Mobile-responsive design</li>
+              <li>Your business information and services</li>
+              <li>WhatsApp and contact links</li>
+              <li>Basic SEO setup</li>
+            </ul>
+            <div class="pz-actions">
+              <a
+                class="pz-btn"
+                href="https://wa.me/2348038804745?text=Hi%2C%20I%27m%20interested%20in%20the%20Basic%20landing%20page%20(%E2%82%A650%2C000)."
+                target="_blank"
+                rel="noopener"
+                >Get this on WhatsApp</a
+              >
+              <button
+                class="pz-btn pz-ghost"
+                type="button"
+                data-pz-open="basic"
+              >
+                See what's included
+              </button>
+            </div>
+          </article>
+
+          <!-- Simple -->
+          <article class="pz-card">
+            <h3>Simple business website</h3>
+            <p class="pz-scope">3–5 pages</p>
+            <p class="pz-price">₦100,000</p>
+            <p class="pz-delivery">Typical delivery: 5–7 days</p>
+            <ul class="pz-list">
+              <li>3–5 pages</li>
+              <li>Clean, responsive design</li>
+              <li>About, Services, Contact and other relevant pages</li>
+              <li>WhatsApp and contact form</li>
+              <li>Basic SEO setup</li>
+            </ul>
+            <div class="pz-actions">
+              <a
+                class="pz-btn"
+                href="https://wa.me/2348038804745?text=Hi%2C%20I%27m%20interested%20in%20the%20Simple%20business%20website%20(%E2%82%A6100%2C000)."
+                target="_blank"
+                rel="noopener"
+                >Get this on WhatsApp</a
+              >
+              <button
+                class="pz-btn pz-ghost"
+                type="button"
+                data-pz-open="simple"
+              >
+                See what's included
+              </button>
+            </div>
+          </article>
+
+          <!-- Professional (featured) -->
+          <article class="pz-card pz-featured">
+            <span class="pz-tag">Most popular</span>
+            <h3>Professional business website</h3>
+            <p class="pz-scope">5–8 pages</p>
+            <p class="pz-price">₦150,000</p>
+            <p class="pz-delivery">Typical delivery: 10–14 days</p>
+            <ul class="pz-list">
+              <li>5–8 pages</li>
+              <li>Modern, customised design</li>
+              <li>Optimised for mobile and desktop</li>
+              <li>Services, projects or products presented properly</li>
+              <li>Contact forms and call-to-action sections</li>
+              <li>Basic SEO and speed optimisation</li>
+            </ul>
+            <div class="pz-actions">
+              <a
+                class="pz-btn"
+                href="https://wa.me/2348038804745?text=Hi%2C%20I%27m%20interested%20in%20the%20Professional%20business%20website%20(%E2%82%A6150%2C000)."
+                target="_blank"
+                rel="noopener"
+                >Get this on WhatsApp</a
+              >
+              <button class="pz-btn pz-ghost" type="button" data-pz-open="pro">
+                See what's included
+              </button>
+            </div>
+          </article>
+        </div>
+
+        <!-- Custom -->
+        <div class="pz-custom">
+          <div>
+            <h3>Custom business website, from ₦250,000</h3>
+            <p>
+              Need online booking, payments or a custom workflow? Tell me what
+              your business needs and I'll give you a clear quote.
+            </p>
+          </div>
+          <a
+            class="pz-btn"
+            href="https://wa.me/2348038804745?text=Hi%2C%20I%27d%20like%20a%20quote%20for%20a%20custom%20business%20website."
+            target="_blank"
+            rel="noopener"
+            >Ask for a quote</a
+          >
+        </div>
+
+        <ul class="pz-notes">
+          <li>
+            <strong>Domain name and hosting are not included.</strong> You pay
+            for them separately. I can set both up for you, and you only pay the
+            provider's cost.
+          </li>
+          <li>
+            Final price depends on the agreed scope. Extra features and major
+            revisions outside the scope are charged separately.
+          </li>
+          <li>
+            Timelines start once payment and your content (logo, text, photos)
+            are received. Delivery times and post-launch support are agreed
+            before work begins.
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Details modal (one shared dialog, filled by the script) -->
+    <div
+      class="pz-modal"
+      id="pz-modal"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="pz-m-title"
+      aria-hidden="true"
+    >
+      <div class="pz-dialog">
+        <button class="pz-close" type="button" id="pz-close" aria-label="Close">
+          &times;
+        </button>
+        <h3 id="pz-m-title"></h3>
+        <p class="pz-m-price" id="pz-m-price"></p>
+        <p class="pz-m-meta" id="pz-m-meta"></p>
+        <ul id="pz-m-list"></ul>
+        <p class="pz-m-note">
+          Domain name and hosting are not included. Final price depends on the
+          agreed scope.
+        </p>
+        <a class="pz-btn" id="pz-m-cta" href="#" target="_blank" rel="noopener"
+          >Get this on WhatsApp</a
+        >
+      </div>
+    </div>
+
+    <script>
+      (function () {
+        // Edit the details shown in each popup here.
+        var WA = "https://wa.me/2348038804745?text=";
+        var plans = {
+          basic: {
+            title: "Basic landing page",
+            price: "₦50,000",
+            meta: "1 page · Typical delivery: 2–3 days",
+            items: [
+              "One well-structured page that presents your business",
+              "Works well on phones, tablets and computers",
+              "Your services, business details and contact information",
+              "WhatsApp and contact links so customers can reach you fast",
+              "Basic SEO setup so Google can understand your page",
+            ],
+            msg: "Hi, I'm interested in the Basic landing page (₦50,000).",
+          },
+          simple: {
+            title: "Simple business website",
+            price: "₦100,000",
+            meta: "3–5 pages · Typical delivery: 5–7 days",
+            items: [
+              "3–5 pages, such as Home, About, Services and Contact",
+              "Clean design that works on every screen size",
+              "WhatsApp link and a contact form that sends enquiries to you",
+              "Basic SEO setup for every page",
+            ],
+            msg: "Hi, I'm interested in the Simple business website (₦100,000).",
+          },
+          pro: {
+            title: "Professional business website",
+            price: "₦150,000",
+            meta: "5–8 pages · Typical delivery: 10–14 days",
+            items: [
+              "5–8 pages with a modern design made for your business",
+              "Optimised for mobile and desktop",
+              "A proper showcase of your services, projects or products",
+              "Contact forms and call-to-action sections that turn visitors into enquiries",
+              "Basic SEO and speed optimisation",
+            ],
+            msg: "Hi, I'm interested in the Professional business website (₦150,000).",
+          },
+        };
+
+        var modal = document.getElementById("pz-modal");
+        var closeBtn = document.getElementById("pz-close");
+        var lastFocus = null;
+
+        function openModal(key, trigger) {
+          var p = plans[key];
+          if (!p) return;
+          lastFocus = trigger;
+          document.getElementById("pz-m-title").textContent = p.title;
+          document.getElementById("pz-m-price").textContent = p.price;
+          document.getElementById("pz-m-meta").textContent = p.meta;
+          var list = document.getElementById("pz-m-list");
+          list.innerHTML = "";
+          p.items.forEach(function (t) {
+            var li = document.createElement("li");
+            li.textContent = t;
+            list.appendChild(li);
+          });
+          document.getElementById("pz-m-cta").href =
+            WA + encodeURIComponent(p.msg);
+          modal.classList.add("pz-open");
+          modal.setAttribute("aria-hidden", "false");
+          document.body.style.overflow = "hidden";
+          closeBtn.focus();
+        }
+
+        function closeModal() {
+          modal.classList.remove("pz-open");
+          modal.setAttribute("aria-hidden", "true");
+          document.body.style.overflow = "";
+          if (lastFocus) lastFocus.focus();
+        }
+
+        document.querySelectorAll("[data-pz-open]").forEach(function (btn) {
+          btn.addEventListener("click", function () {
+            openModal(btn.getAttribute("data-pz-open"), btn);
+          });
+        });
+        closeBtn.addEventListener("click", closeModal);
+        modal.addEventListener("click", function (e) {
+          if (e.target === modal) closeModal();
+        });
+        document.addEventListener("keydown", function (e) {
+          if (e.key === "Escape" && modal.classList.contains("pz-open"))
+            closeModal();
+        });
+      })();
+    </script>
 
     <!-- Contact -->
     <section
