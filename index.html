@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="motion-safe:scroll-smooth scroll-pt-20">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -65,28 +65,42 @@
     </style>
   </head>
 
-  <body class="bg-ink text-text font-sans antialiased">
+  <body id="top" class="bg-ink text-text font-sans antialiased">
     <!-- Nav -->
-    <header
-      class="max-w-5xl mx-auto px-6 pt-10 flex items-center justify-between"
+    <div
+      class="sticky top-0 z-40 bg-bg/90 backdrop-blur border-b border-black/5"
     >
-      <a
-        href="/"
-        class="font-serif text-lg tracking-tight hover:opacity-80 transition-opacity"
+      <header
+        class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between"
       >
-        ChibuzoConnect <span class="text-muted">Technologies</span>
-      </a>
+        <a
+          href="#top"
+          class="font-serif text-lg tracking-tight hover:opacity-80 transition-opacity"
+        >
+          ChibuzoConnect <span class="text-muted">Technologies</span>
+        </a>
 
-      <nav class="hidden sm:flex gap-8 text-sm text-muted">
-        <a href="#work" class="hover:text-text transition-colors">Work</a>
-        <a href="#services" class="hover:text-text transition-colors">
-          Services
+        <nav class="hidden sm:flex gap-8 text-sm text-muted">
+          <a href="#work" class="hover:text-text transition-colors">Work</a>
+          <a href="#services" class="hover:text-text transition-colors"
+            >Services</a
+          >
+          <a href="#pricing" class="hover:text-text transition-colors"
+            >Pricing</a
+          >
+          <a href="#contact" class="hover:text-text transition-colors"
+            >Contact</a
+          >
+        </nav>
+
+        <a
+          href="#pricing"
+          class="sm:hidden text-sm text-muted hover:text-text transition-colors"
+        >
+          Pricing
         </a>
-        <a href="#contact" class="hover:text-text transition-colors">
-          Contact
-        </a>
-      </nav>
-    </header>
+      </header>
+    </div>
 
     <!-- Hero -->
     <section class="max-w-5xl mx-auto px-6 pt-20 pb-24">
